@@ -131,11 +131,12 @@ const superWizard = new WizardScene( 'super-wizard',
 
     onPost( state.data )
       .then( res => {
-        console.log( res );
-        state.data = {};
+        console.log( 'ok' );
+        state.data.fullname = '';
+        state.data.phone = '';
+        state.data.appointments = [];
       } )
       .catch( e => {
-        state.data = {};
         console.error( e.response.errors )
       } );
 
